@@ -103,7 +103,7 @@ const ApiComponent = () => {
                 <div>
                     <h2 className='subHead'>POST Response:</h2>
                     <div className="map-filter">
-                        <h3>Multi Filter:</h3>
+                        <h3 style={{color:'#ade8f4'}}>Multi Filter:</h3>
                         <div className="selected-options">
                             {renderSelectedOptions()}
                         </div>

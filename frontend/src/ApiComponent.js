@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
-import drop from './drop.png';
 
 const ApiComponent = () => {
     const [postData, setPostData] = useState('');
     const [responseData, setResponseData] = useState(null);
     const [getResponse, setGetResponse] = useState(null);
     const [error, setError] = useState('');
-    const options = useState(["Alphabets", "Numbers", "Highest lowercase alphabet"]);
+    const [options] = useState(["Alphabets", "Numbers", "Highest lowercase alphabet"]);  // Removed setOptions
     const [selectedOptions, setSelectedOptions] = useState([]);
 
     useEffect(() => {
@@ -28,10 +27,7 @@ const ApiComponent = () => {
             console.error('Error making POST request:', error);
         }
     };
-    const handleRemoveOption = (option) => {
-        setSelectedOptions(selectedOptions.filter(o => o !== option));
-    };
-    
+
     const handleGetRequest = async () => {
         try {
             const response = await axios.get('http://localhost:3000/bfhl');
@@ -48,6 +44,10 @@ const ApiComponent = () => {
         }
     };
 
+    const handleRemoveOption = (option) => {
+        setSelectedOptions(selectedOptions.filter(o => o !== option));
+    };
+    
     const renderSelectedOptions = () => {
         return selectedOptions.map(option => (
             <span key={option} className="selected-option">
@@ -56,13 +56,12 @@ const ApiComponent = () => {
             </span>
         ));
     };
-    
 
     const renderResponse = () => {
         if (!responseData) return null;
 
         return (
-            <div>
+            <div className='mapResults'>
                 {selectedOptions.includes('Alphabets') && (
                     <div>
                         <h3>Alphabets:</h3>
@@ -87,14 +86,14 @@ const ApiComponent = () => {
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <h1 className='headingText'>BAJAJ FullStack App</h1>
+            <h1 className='headingText' style={{color:'#005DAC'}}>BAJAJ FullStack App</h1>
             <textarea
                 placeholder='Enter JSON data (e.g., {"data": ["A","C","z"]})'
                 value={postData}
                 onChange={(e) => setPostData(e.target.value)}
                 rows="3"
                 cols="50"
-                style={{ border:'none', borderRadius:'7px', padding:'10px', select: 'none' }}
+                style={{borderRadius:'10px', padding:'10px'}}
             />
             <br />
             <button className='subBtn' onClick={handlePostRequest}>Submit</button>
@@ -103,7 +102,7 @@ const ApiComponent = () => {
                 <div>
                     <h2 className='subHead'>POST Response:</h2>
                     <div className="map-filter">
-                        <h3>Map Filter:</h3>
+                        <h3>Multi Filter:</h3>
                         <div className="selected-options">
                             {renderSelectedOptions()}
                         </div>
@@ -116,7 +115,6 @@ const ApiComponent = () => {
                                 <option key={option} value={option}>{option}</option>
                             ))}
                         </select>
-                        <img style={{width:'20px', position:'relative', right:'30px', top:'3px'}} src={drop} alt=''></img>
                     </div>
                     {renderResponse()}
                 </div>
@@ -126,7 +124,7 @@ const ApiComponent = () => {
             {getResponse && (
                 <div>
                     <h2 className='subHead'>GET Response:</h2>
-                    <pre style={{background:'white', borderRadius:'7px', padding:'10px', width:'250px'}}>{JSON.stringify(getResponse, null, 2)}</pre>
+                    <pre style={{background:'#ffeedd', width:'380px', height:'50px', borderRadius:'10px', padding:'10px'}}>{JSON.stringify(getResponse, null, 2)}</pre>
                 </div>
             )}
         </div>

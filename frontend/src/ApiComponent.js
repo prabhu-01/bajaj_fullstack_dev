@@ -116,7 +116,7 @@ const ApiComponent = () => {
                                 <option key={option} value={option}>{option}</option>
                             ))}
                         </select>
-                        <img style={{width:'20px', position:'relative', right:'30px', top:'3px'}} src={drop}></img>
+                        <img style={{width:'20px', position:'relative', right:'30px', top:'3px'}} src={drop} alt=''></img>
                     </div>
                     {renderResponse()}
                 </div>

@@ -8,7 +8,7 @@ const ApiComponent = () => {
     const [responseData, setResponseData] = useState(null);
     const [getResponse, setGetResponse] = useState(null);
     const [error, setError] = useState('');
-    const [options, setOptions] = useState(["Alphabets", "Numbers", "Highest lowercase alphabet"]);
+    const options = useState(["Alphabets", "Numbers", "Highest lowercase alphabet"]);
     const [selectedOptions, setSelectedOptions] = useState([]);
 
     useEffect(() => {

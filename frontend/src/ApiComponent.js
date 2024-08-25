@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
+import drop from './drop.png';
 
 const ApiComponent = () => {
     const [postData, setPostData] = useState('');
@@ -115,6 +116,7 @@ const ApiComponent = () => {
                                 <option key={option} value={option}>{option}</option>
                             ))}
                         </select>
+                        <img src={drop} alt='' style={{width:'30px', height:'30px', position:'relative', top:'10px', left:'-36px'}}></img>
                     </div>
                     {renderResponse()}
                 </div>

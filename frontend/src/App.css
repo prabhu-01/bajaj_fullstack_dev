@@ -1,0 +1,136 @@
+.App {
+  text-align: center;
+  height: 100vh;
+  background-color: #D9AFD9;
+background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
+
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.subBtn {
+  background-color: #005DAC;
+  width: 380px;
+  border: none;
+  border-radius: 7px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.styled-select {
+  width: 300px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  font-size: 16px;
+  appearance: none;
+}
+
+.styled-select:focus {
+  outline: none;
+  border-color: #005DAC;
+}
+
+/* General dropdown container */
+.dropdown-container {
+  margin: 15px 0;
+  width: 300px;
+}
+.selected-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Space between selected options */
+  margin-bottom: 10px;
+}
+
+.selected-option {
+  background-color: grey; /* Blue background */
+  color: white; /* White text */
+  padding: 5px 10px; /* Padding for better spacing */
+  border-radius: 4px; /* Rounded corners */
+  font-weight: bold;
+  position: relative;
+  padding-right: 30px;
+}
+
+.remove-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.styled-select option {
+  padding: 10px;
+  font-size: 16px;
+}
+.headingText{
+  font-family: "New Amsterdam", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.subHead{
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+.getBtn{
+  width: 380px;
+}
+.subBtn, .getBtn {
+  padding: 10px 20px;
+  margin: 10px 0;
+  font-size: 16px;
+  background-color: #005DAC;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.subBtn:hover, .getBtn:hover {
+  background-color: #0056b3;
+}
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

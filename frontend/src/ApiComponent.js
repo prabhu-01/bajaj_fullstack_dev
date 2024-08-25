@@ -97,7 +97,7 @@ const ApiComponent = () => {
                 style={{borderRadius:'10px', padding:'10px'}}
             />
             <br />
-            <button className='subBtn' onClick={handlePostRequest}>Submit</button>
+            <button className='subBt' onClick={handlePostRequest}>Submit</button>
             {error && <p style={{ color: 'red' }}>{error}</p>}
             {responseData && (
                 <div>

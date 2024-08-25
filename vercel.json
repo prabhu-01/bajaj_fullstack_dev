@@ -8,25 +8,12 @@
         "distDir": "frontend/build",
         "command": "npm run build"
       }
-    },
-    {
-      "src": "backend/index.js",
-      "use": "@vercel/node",
-      "config": {
-        "includeFiles": [
-          "backend/**/*.js"
-        ]
-      }
     }
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "/backend/index.js"
-    },
-    {
       "src": "/(.*)",
-      "dest": "/frontend/index.html"
+      "dest": "/index.html"
     }
   ]
 }
